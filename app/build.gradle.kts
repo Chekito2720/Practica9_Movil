@@ -71,6 +71,7 @@ dependencies {
     // Firebase Realtime Database
     implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
     implementation("com.google.firebase:firebase-database")
+    implementation("com.google.firebase:firebase-auth")
 
     // ViewModel para Compose (versión alineada con lifecycle 2.6.1 y compileSdk 34)
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")

@@ -7,6 +7,7 @@ data class Incidencia(
     val prioridad: String,
     val version: Long,
     val modificadoPor: String,
+    val creadoPor: String, // UID del propietario
     val pendiente: Boolean // true = escritura aún sin confirmar por el servidor
 )
 
