@@ -59,7 +59,20 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Raiz(vm: IncidenciasViewModel = viewModel()) {
-    if (vm.uid == null) PantallaLogin(vm) else PantallaIncidencias(vm)
+    var pestana by remember { mutableStateOf("Incidencias") }
+
+    if (vm.uid == null) {
+        PantallaLogin(vm)
+    } else {
+        Column(Modifier.fillMaxSize().systemBarsPadding()) {
+            Box(Modifier.padding(horizontal = 12.dp, vertical = 4.dp)) {
+                Opciones(listOf("Incidencias", "Reportes"), pestana) { pestana = it }
+            }
+            Box(Modifier.weight(1f)) {
+                if (pestana == "Incidencias") PantallaIncidencias(vm) else PantallaReportes()
+            }
+        }
+    }
 }
 
 @Composable
